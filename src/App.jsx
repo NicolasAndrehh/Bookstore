@@ -4,6 +4,7 @@ import {
 import Booklist from './components/booklist';
 import Header from './components/header';
 import Categories from './components/categories';
+import './App.scss';
 
 function App() {
   return (
