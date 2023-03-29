@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import AddBookForm from './addBookForm';
+import Book from './book';
 
 const Booklist = () => {
   // eslint-disable-next-line no-unused-vars
@@ -12,10 +13,7 @@ const Booklist = () => {
   return (
     <section className="booklist-section">
       {booklist.map((book) => (
-        <div key={book.id}>
-          <p>{book.title}</p>
-          <p>{book.author}</p>
-        </div>
+        <Book key={book.id} title={book.title} author={book.author} />
       ))}
 
       <AddBookForm booklist={booklist} setBooklist={setBooklist} />
