@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const Categories = () => {
+  // Connect to store and access to state variable
   const categories = useSelector((state) => state.categories);
   const [showStatus, setShowStatus] = useState(false);
 
