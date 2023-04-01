@@ -1,42 +1,62 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
+import { addBook, getBooklist, removeBook } from './actions';
 
 const initialState = {
-  value: [
-    {
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-      id: 'item1',
-    },
-    {
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-      id: 'item2',
-    },
-    {
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-      id: 'item3',
-    },
-  ],
+  data: [],
+  isLoading: false,
+  isSuccess: false,
+  errorMessage: '',
 };
 
 const booklistSlice = createSlice({
   name: 'booklist',
   initialState,
-  reducers: {
-    addBook: (state, action) => {
-      state.value = [...state.value, action.payload];
-    },
+  extraReducers: (builder) => {
+    builder
+      // Get Booklist
+      .addCase(getBooklist.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(getBooklist.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.data = payload;
+      })
+      .addCase(getBooklist.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.errorMessage = payload;
+      })
 
-    removeBook: (state, action) => {
-      state.value = state.value.filter((book) => book.id !== action.payload);
-    },
+      // Add book
+      .addCase(addBook.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(addBook.fulfilled, (state) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+      })
+      .addCase(addBook.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.errorMessage = payload;
+      })
+
+      // Remove book
+      .addCase(removeBook.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(removeBook.fulfilled, (state) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+      })
+      .addCase(removeBook.rejected, (state, { payload }) => {
+        state.isLoading = false;
+        state.isSuccess = false;
+        state.errorMessage = payload;
+      });
   },
 });
 
-export const { addBook, removeBook } = booklistSlice.actions;
 export default booklistSlice.reducer;
