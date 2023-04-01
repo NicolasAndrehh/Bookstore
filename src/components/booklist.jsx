@@ -15,6 +15,7 @@ const Booklist = () => {
   // Fetch API
   useEffect(() => {
     dispatch(getBooklist(URL));
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Display each book if the API fetch was successful
