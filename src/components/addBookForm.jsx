@@ -12,6 +12,8 @@ const AddBookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = uuid();
+
+    // Use dispatch and addBook reducer to add a new book
     dispatch(addBook({ title, author, id }));
     setTitle('');
     setAuthor('');

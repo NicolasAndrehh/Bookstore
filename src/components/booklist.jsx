@@ -3,6 +3,7 @@ import AddBookForm from './addBookForm';
 import Book from './book';
 
 const Booklist = () => {
+  // Connect to store and access to state variable
   const booklist = useSelector((state) => state.booklist.value);
 
   return (

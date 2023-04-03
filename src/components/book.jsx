@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { removeBook } from '../redux/booklist/booklistSlice';
 
 const Book = ({ title, author, id }) => {
+  // Use dispatch and removeBook reducer to remove a book
   const dispatch = useDispatch();
 
   return (

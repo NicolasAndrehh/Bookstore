@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { checkStatus } from '../redux/categories/categoriesSlice';
 
 const Categories = () => {
+  // Connect to store and access to state variable
   const categories = useSelector((state) => state.categories);
   const dispatch = useDispatch();
 
