@@ -79,7 +79,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-[Bookstore - Live Demo](https://nicolasandrehh.github.io/Bookstore/) ***Not implemented yet***
+***Not implemented yet***
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 

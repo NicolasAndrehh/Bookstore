@@ -2,19 +2,31 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 as uuid } from 'uuid';
-import { addBook } from '../redux/booklist/booklistSlice';
+import { addBook, getBooklist } from '../redux/booklist/actions';
 
 const AddBookForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
+  const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/';
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = uuid();
+    const itemId = uuid();
 
     // Use dispatch and addBook reducer to add a new book
-    dispatch(addBook({ title, author, id }));
+    dispatch(addBook({
+      URL,
+      newBook: {
+        item_id: itemId,
+        title,
+        author,
+        category: '',
+      },
+    })).then(() => {
+      dispatch(getBooklist(URL));
+    });
+
     setTitle('');
     setAuthor('');
   };
