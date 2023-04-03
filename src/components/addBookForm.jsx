@@ -12,7 +12,6 @@ const AddBookForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id = uuid();
-    console.log(id);
     dispatch(addBook({ title, author, id }));
     setTitle('');
     setAuthor('');
