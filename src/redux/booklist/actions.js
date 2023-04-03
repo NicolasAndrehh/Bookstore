@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
 
 const APP_ID = 'ATZrglcJ1nPcZ4a09o9u';
