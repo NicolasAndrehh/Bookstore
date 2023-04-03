@@ -1,14 +1,18 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { v4 as uuid } from 'uuid';
+import { addBook } from '../redux/booklist/booklistSlice';
 
-const AddBookForm = ({ booklist, setBooklist }) => {
+const AddBookForm = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id = booklist.length;
-    setBooklist([...booklist, { title, author, id }]);
+    const id = uuid();
+    dispatch(addBook({ title, author, id }));
     setTitle('');
     setAuthor('');
   };
@@ -20,17 +24,6 @@ const AddBookForm = ({ booklist, setBooklist }) => {
       <button type="submit">Add book</button>
     </form>
   );
-};
-
-AddBookForm.propTypes = {
-
-  booklist: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    author: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-  })).isRequired,
-
-  setBooklist: PropTypes.func.isRequired,
 };
 
 export default AddBookForm;
