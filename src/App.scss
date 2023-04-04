@@ -43,7 +43,7 @@ body {
       font-weight: bold;
       color: $lightblue;
     }
-  
+
     a {
       font-size: 0.813rem;
       text-decoration: none;
@@ -58,7 +58,7 @@ body {
         opacity: 1;
       }
     }
-    
+
     .active {
       font-weight: 500;
       opacity: 1;
@@ -84,6 +84,48 @@ body {
   gap: 2rem;
   margin-top: 10rem;
 
+  .chapter-info {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Slab', serif;
+    gap: 0.5rem;
+
+    h4 {
+      opacity: 0.5;
+      text-transform: uppercase;
+      font-size: 0.813rem;
+      font-weight: 400;
+      color: $black;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: -0.4px;
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      border-radius: 3px;
+      width: 11.5rem;
+      font-family: 'Roboto Slab', serif;
+      background-color: $lightblue;
+      letter-spacing: 0.5px;
+      font-size: 0.8rem;
+      font-weight: 300;
+      border: 1px solid;
+      color: $white;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $white;
+        color: $lightblue;
+      }
+    }
+  }
+
   .book-container {
     display: flex;
     justify-content: space-between;
@@ -99,9 +141,11 @@ body {
         font-size: 0.875rem;
         font-weight: bold;
         color: $black;
-      } 
+      }
 
-      .title, .author, .actions button {
+      .title,
+      .author,
+      .actions button {
         font-family: 'Roboto Slab', serif;
       }
 
@@ -164,7 +208,7 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-  
+
           .circular-progress {
             position: absolute;
             border-radius: 50%;
@@ -183,6 +227,7 @@ body {
             font-weight: 400;
             color: $black;
           }
+
           p {
             opacity: 0.5;
             font-size: 0.875rem;
@@ -196,48 +241,6 @@ body {
         height: 4.375rem;
         margin: 0 3.688rem 0 4.938rem;
         background-color: $gray;
-      }
-
-      .chapter-info {
-        display: flex;
-        flex-direction: column;
-        font-family: 'Roboto Slab', serif;
-        gap: 0.5rem;
-  
-        h4 {
-          opacity: 0.5;
-          text-transform: uppercase;
-          font-size: 0.813rem;
-          font-weight: 400;
-          color: $black;
-        }
-  
-        p {
-          font-size: 1rem;
-          font-weight: 300;
-          letter-spacing: -0.4px;
-        }
-  
-        button {
-          padding: 0.6rem 1rem;
-          border-radius: 3px;
-          width: 11.5rem;
-          font-family: 'Roboto Slab', serif;
-          background-color: $lightblue;
-          letter-spacing: 0.5px;
-          font-size: 0.8rem;
-          font-weight: 300;
-          border: 1px solid;
-          color: $white;
-          text-transform: uppercase;
-          transition: all 0.2s ease-in-out;
-          cursor: pointer;
-
-          &:hover {
-            background-color: $white;
-            color: $lightblue;
-          }
-        }
       }
     }
   }
@@ -272,7 +275,31 @@ body {
     gap: 2rem;
     width: 100%;
 
-    .title-input, .author-input, .submit-button {
+    .title-input {
+      width: 55%;
+    }
+
+    .author-input {
+      width: 25%;
+    }
+
+    .submit-button {
+      font-family: 'Roboto Slab', serif !important;
+      background-color: $lightblue;
+      text-transform: uppercase;
+      width: 20%;
+      border: 1px solid $lightblue !important;
+      letter-spacing: 0.5px;
+      color: $white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+    }
+
+    .title-input,
+    .author-input,
+    .submit-button {
       font-family: "Montserrat", sans-serif;
       padding: 0.75rem 1rem;
       font-size: 1rem;
@@ -290,31 +317,9 @@ body {
       }
     }
 
-    .title-input {
-      width: 60%;
-    }
-
-    .author-input {
-      width: 25%;
-    }
-
-    .submit-button {
-      font-family: 'Roboto Slab', serif;
-      background-color: $lightblue;
-      text-transform: uppercase;
-      width: 15%;
-      border: 1px solid;
-      letter-spacing: .5px;
-      color: $white;
-      font-size: .813rem;
-      font-weight: 700;
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-
-      &:hover {
-        background-color: $white;
-        color: $lightblue;
-      }
+    .submit-button:hover {
+      background-color: $white;
+      color: $lightblue;
     }
   }
 }
@@ -328,13 +333,13 @@ body {
   height: 100vh;
   gap: 2rem;
 
-  button {
+  .check-status-button {
     font-family: "Montserrat", sans-serif;
     padding: 1rem;
     background-color: $lightblue;
     text-transform: uppercase;
     border: 1px solid #006ec2;
-    box-shadow: inset 0px 0px 3px 0px #006ec2;
+    box-shadow: inset 0 0 3px 0 #006ec2;
     color: $white;
     font-weight: 700;
     letter-spacing: 1px;

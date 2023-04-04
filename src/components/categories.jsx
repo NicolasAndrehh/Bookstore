@@ -8,7 +8,7 @@ const Categories = () => {
 
   return (
     <section className="categories-section">
-      {isLoading ? <h1>Loading...</h1> : <button type="button" onClick={() => dispatch(checkStatus())}>Check Status</button>}
+      {isLoading ? <h1>Loading...</h1> : <button type="button" onClick={() => dispatch(checkStatus())} className="check-status-button">Check Status</button>}
       <h2>{value}</h2>
     </section>
   );
