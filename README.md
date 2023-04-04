@@ -14,7 +14,6 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -55,7 +54,7 @@
 <details>
   <summary>Server</summary>
   <ul>
-    <li>GitHub Pages</li>
+    <li>No server was used in this project</li>
   </ul>
 </details>
 
@@ -72,14 +71,6 @@
 
 - **[This project use React]**
 - **[This project does a correct use of GitHub Flows]**
-
-<p align="right"><a href="#readme-top">Back to top</a></p>
-
-<!-- LIVE DEMO -->
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-***Not implemented yet***
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
@@ -150,6 +141,7 @@ To run tests, run the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Improve UI design]**
+- [ ] **[Add a live version]**
 
 <p align="right"><a href="#readme-top">Back to top</a></p>
 
