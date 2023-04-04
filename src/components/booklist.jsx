@@ -37,9 +37,11 @@ const Booklist = () => {
   return (
     <section className="booklist-section">
 
-      {isLoading ? <p>Loading...</p> : null}
+      {isLoading ? <h1>Loading...</h1> : null}
 
       {books || error}
+
+      <div className="horizontal-divider" />
 
       <AddBookForm />
     </section>
