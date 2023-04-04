@@ -21,7 +21,13 @@ const Booklist = () => {
   // Display each book if the API fetch was successful
   const books = isSuccess && Object.keys(booklist).map((key) => (
     booklist[key].map((book) => (
-      <Book key={key} title={book.title} author={book.author} itemId={key} />
+      <Book
+        key={key}
+        title={book.title}
+        author={book.author}
+        itemId={key}
+        category={book.category}
+      />
     ))
   ));
 
@@ -31,9 +37,11 @@ const Booklist = () => {
   return (
     <section className="booklist-section">
 
-      {isLoading ? <p>Loading...</p> : null}
+      {isLoading ? <h1>Loading...</h1> : null}
 
       {books || error}
+
+      <div className="horizontal-divider" />
 
       <AddBookForm />
     </section>

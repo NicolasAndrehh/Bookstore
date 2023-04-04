@@ -3,14 +3,14 @@ import { checkStatus } from '../redux/categories/categoriesSlice';
 
 const Categories = () => {
   // Connect to store and access to state variable
-  const categories = useSelector((state) => state.categories);
+  const { value, isLoading } = useSelector((state) => state.categories);
   const dispatch = useDispatch();
 
   return (
-    <>
-      <button type="button" onClick={() => dispatch(checkStatus())}>Check Status</button>
-      <h2>{categories.value}</h2>
-    </>
+    <section className="categories-section">
+      {isLoading ? <h1>Loading...</h1> : <button type="button" onClick={() => dispatch(checkStatus())} className="check-status-button">Check Status</button>}
+      <h2>{value}</h2>
+    </section>
   );
 };
 
